@@ -1,8 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Search, Users, Building, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleFindJob = () => {
+    navigate("/jobs");
+  };
+
+  const handlePostJob = () => {
+    navigate("/post-job");
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       {/* Background Image with Overlay */}
@@ -32,11 +43,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="accent" size="lg" className="text-lg px-8 py-6">
+            <Button variant="accent" size="lg" className="text-lg px-8 py-6" onClick={handleFindJob}>
               <Search className="mr-2" />
               Find Your Dream Job
             </Button>
-            <Button variant="hero" size="lg" className="text-lg px-8 py-6 bg-white/10 text-white border border-white/20 hover:bg-white/20">
+            <Button variant="hero" size="lg" className="text-lg px-8 py-6 bg-white/10 text-white border border-white/20 hover:bg-white/20" onClick={handlePostJob}>
               <Building className="mr-2" />
               Post a Job
             </Button>
