@@ -64,4 +64,79 @@ export const companies = [
     country: "Country",
     userId: "4",
   },
+];
+
+export const applications = [
+  {
+    id: "a1",
+    jobId: "j1",
+    applicantId: "ap1",
+    status: "applied",
+    appliedAt: "2024-06-10",
+  },
+  {
+    id: "a2",
+    jobId: "j2",
+    applicantId: "ap2",
+    status: "shortlisted",
+    appliedAt: "2024-06-12",
+  },
+];
+
+export const applicantProfiles = [
+  {
+    id: "ap1",
+    userId: "3",
+    fullName: "Applicant User",
+    email: "applicant@example.com",
+    bio: "Passionate developer.",
+    skills: ["React", "TypeScript"],
+    experienceYears: 2,
+    education: "BSc Computer Science",
+    location: "Remote",
+    resumeUrl: "/dummy-resume.pdf",
+    preferredRoles: ["Frontend Developer"],
+  },
+  {
+    id: "ap2",
+    userId: "5",
+    fullName: "Second Applicant",
+    email: "second@applicant.com",
+    bio: "Backend specialist.",
+    skills: ["Node.js", "PostgreSQL"],
+    experienceYears: 4,
+    education: "MSc Software Engineering",
+    location: "Onsite",
+    resumeUrl: "/dummy-resume2.pdf",
+    preferredRoles: ["Backend Developer"],
+  },
+]; 
+
+export const billings = [
+  {
+    id: "ap1",
+    userId: "3",
+    fullName: "Applicant User",
+    email: "applicant@example.com",
+    bio: "Passionate developer.",
+    skills: ["React", "TypeScript"],
+    experienceYears: 2,
+    education: "BSc Computer Science",
+    location: "Remote",
+    resumeUrl: "/dummy-resume.pdf",
+    preferredRoles: ["Frontend Developer"],
+  },
+  {
+    id: "ap2",
+    userId: "5",
+    fullName: "Second Applicant",
+    email: "second@applicant.com",
+    bio: "Backend specialist.",
+    skills: ["Node.js", "PostgreSQL"],
+    experienceYears: 4,
+    education: "MSc Software Engineering",
+    location: "Onsite",
+    resumeUrl: "/dummy-resume2.pdf",
+    preferredRoles: ["Backend Developer"],
+  },
 ]; 

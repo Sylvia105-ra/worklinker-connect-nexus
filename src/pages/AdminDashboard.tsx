@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { jobs, companies, users, applications, billings, flaggedJobs, flaggedUsers } from "@/dummyData";
+import { jobs, companies, applications, billings, } from "@/dummyData";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -60,9 +60,9 @@ const AdminDashboard = () => {
         </TabsContent>
         {/* Users Tab */}
         <TabsContent value="users">
-          <Button onClick={() => exportToExcel(users, "users.xlsx")} className="mb-2">
+          {/* <Button onClick={() => exportToExcel(users, "users.xlsx")} className="mb-2">
             <Download className="h-4 w-4 mr-2" /> Export Users (Excel)
-          </Button>
+          </Button> */}
           <Table>
             <TableHeader>
               <TableRow>
@@ -119,13 +119,13 @@ const AdminDashboard = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {flaggedJobs.map((f) => (
+              {/* {flaggedJobs.map((f) => (
                 <TableRow key={f.id}>
                   <TableCell>{jobs.find((j) => j.id === f.jobId)?.title}</TableCell>
                   <TableCell>{f.reason}</TableCell>
                   <TableCell>{f.date}</TableCell>
                 </TableRow>
-              ))}
+              ))} */}
             </TableBody>
           </Table>
           <h2 className="font-bold mt-4 mb-2">Flagged Users</h2>
@@ -138,13 +138,13 @@ const AdminDashboard = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {flaggedUsers.map((f) => (
+              {/* {flaggedUsers.map((f) => (
                 <TableRow key={f.id}>
                   <TableCell>{users.find((u) => u.id === f.userId)?.fullName}</TableCell>
                   <TableCell>{f.reason}</TableCell>
                   <TableCell>{f.date}</TableCell>
                 </TableRow>
-              ))}
+              ))} */}
             </TableBody>
           </Table>
         </TabsContent>
