@@ -135,8 +135,30 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           title: "Welcome back!",
           description: "You have successfully signed in.",
         });
-        // Force page reload for clean state
-        window.location.href = '/';
+        
+        // Get user role and redirect to appropriate dashboard
+        const { data: roleData } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', data.user.id)
+          .single();
+
+        const role = roleData?.role || 'applicant';
+        
+        // Redirect based on role
+        switch (role) {
+          case 'admin':
+            window.location.href = '/admin';
+            break;
+          case 'company':
+            window.location.href = '/company';
+            break;
+          case 'applicant':
+            window.location.href = '/applicant';
+            break;
+          default:
+            window.location.href = '/';
+        }
       }
 
       return { error: null };
