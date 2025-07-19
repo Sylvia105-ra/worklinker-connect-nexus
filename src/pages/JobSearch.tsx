@@ -105,11 +105,11 @@ const JobSearch = () => {
       );
     }
 
-    if (jobType) {
+    if (jobType && jobType !== "all-types") {
       filtered = filtered.filter(job => job.type === jobType);
     }
 
-    if (experience) {
+    if (experience && experience !== "all-levels") {
       filtered = filtered.filter(job => job.experience === experience);
     }
 
@@ -160,7 +160,7 @@ const JobSearch = () => {
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Types</SelectItem>
+                    <SelectItem value="all-types">All Types</SelectItem>
                     <SelectItem value="Full-time">Full-time</SelectItem>
                     <SelectItem value="Part-time">Part-time</SelectItem>
                     <SelectItem value="Contract">Contract</SelectItem>
@@ -175,7 +175,7 @@ const JobSearch = () => {
                     <SelectValue placeholder="Select experience" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Levels</SelectItem>
+                    <SelectItem value="all-levels">All Levels</SelectItem>
                     <SelectItem value="Entry level">Entry level</SelectItem>
                     <SelectItem value="2+ years">2+ years</SelectItem>
                     <SelectItem value="3+ years">3+ years</SelectItem>
