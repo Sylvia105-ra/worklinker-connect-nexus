@@ -55,11 +55,22 @@ const Navigation = () => {
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>
+                  <DropdownMenuItem onClick={() => {
+                    switch (userRole) {
+                      case 'admin':
+                        navigate('/admin');
+                        break;
+                      case 'company':
+                        navigate('/company');
+                        break;
+                      case 'applicant':
+                        navigate('/applicant');
+                        break;
+                      default:
+                        navigate('/auth');
+                    }
+                  }}>
                     Dashboard
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/profile')}>
-                    Profile
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={signOut}>
@@ -123,7 +134,21 @@ const Navigation = () => {
               <div className="flex flex-col space-y-2 pt-4">
                 {user ? (
                   <>
-                    <Button variant="ghost" size="sm" onClick={() => navigate('/dashboard')}>
+                    <Button variant="ghost" size="sm" onClick={() => {
+                      switch (userRole) {
+                        case 'admin':
+                          navigate('/admin');
+                          break;
+                        case 'company':
+                          navigate('/company');
+                          break;
+                        case 'applicant':
+                          navigate('/applicant');
+                          break;
+                        default:
+                          navigate('/auth');
+                      }
+                    }}>
                       Dashboard ({userRole})
                     </Button>
                     <Button variant="ghost" size="sm" onClick={signOut}>
